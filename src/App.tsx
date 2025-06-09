@@ -1,10 +1,12 @@
 import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
-import Services from './components/Services';
-import Timeline from './components/Timeline';
-import About from './components/About';
-import Projects from './components/Projects';
+import Historique from './components/Historique';
+import Usinage from './components/Usinage';
+import Chaudronnerie from './components/Chaudronnerie';
+import Flexibles from './components/Flexibles';
+import GroupesElectrogenes from './components/GroupesElectrogenes';
+import Solaire from './components/Solaire';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -14,10 +16,12 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <Services />
-        <Timeline />
-        <About />
-        <Projects />
+        <Historique />
+        <Usinage />
+        <Chaudronnerie />
+        <Flexibles />
+        <GroupesElectrogenes />
+        <Solaire />
         <Contact />
       </main>
       <Footer />

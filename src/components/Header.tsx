@@ -16,9 +16,12 @@ const Header = () => {
   }, []);
 
   const menuItems = [
-    { label: 'Services', href: '#services' },
-    { label: 'À Propos', href: '#about' },
-    { label: 'Projets', href: '#projects' },
+    { label: 'Historique', href: '#historique' },
+    { label: 'Usinage', href: '#usinage' },
+    { label: 'Chaudronnerie', href: '#chaudronnerie' },
+    { label: 'Flexibles', href: '#flexibles' },
+    { label: 'Groupes électrogènes', href: '#groupes-electrogenes' },
+    { label: 'Solaire', href: '#solaire' },
     { label: 'Contact', href: '#contact' },
   ];
 
@@ -44,12 +47,12 @@ const Header = () => {
           </motion.div>
 
           {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center space-x-6">
             {menuItems.map((item, index) => (
               <motion.a
                 key={item.label}
                 href={item.href}
-                className="text-white/90 hover:text-primary-orange transition-colors duration-300 font-medium"
+                className="text-white/90 hover:text-primary-orange transition-colors duration-300 font-medium text-sm"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -58,20 +61,11 @@ const Header = () => {
                 {item.label}
               </motion.a>
             ))}
-            <motion.a
-              href="#contact"
-              className="bg-primary-orange text-white px-6 py-3 rounded-lg font-semibold hover:bg-primary-light-orange transition-colors duration-300 transform hover:scale-105"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-            >
-              Devis Gratuit
-            </motion.a>
           </nav>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white p-2"
+            className="lg:hidden text-white p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Basculer le menu"
           >
@@ -84,7 +78,7 @@ const Header = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="md:hidden bg-navy-dark/95 backdrop-blur-md"
+            className="lg:hidden bg-navy-dark/95 backdrop-blur-md"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -101,13 +95,6 @@ const Header = () => {
                   {item.label}
                 </a>
               ))}
-              <a
-                href="#contact"
-                className="block bg-primary-orange text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-primary-light-orange transition-colors duration-300 mt-4"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Devis Gratuit
-              </a>
             </div>
           </motion.div>
         )}
